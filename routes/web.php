@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\front\HomeController;
+use App\Http\Controllers\front\PagesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',"HomeController@index");
+//Static Pages.
+Route::get('/',[HomeController::class,"index"])->name('home');
+Route::get('/about',[PagesController::class,"about"])->name('about');
+Route::get('/contact',[PagesController::class,"contact"])->name('contact');
+
 
 
