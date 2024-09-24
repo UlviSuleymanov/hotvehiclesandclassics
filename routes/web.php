@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\front\HomeController;
 use App\Http\Controllers\front\PagesController;
+use App\Http\Controllers\admin\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,5 +21,6 @@ Route::get('/about',[PagesController::class,"about"])->name('about');
 Route::get('/contact',[PagesController::class,"contact"])->name('contact');
 Route::post('/contact',[PagesController::class,"contactForm"])->name('contactForm');
 
+Route::resource('blog',"admin\BlogController");
 
 
